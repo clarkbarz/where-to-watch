@@ -1,5 +1,7 @@
 WhereToWatch::Application.routes.draw do
+  get "users/new"
   root to: 'static#home'
+  match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'static#about', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
