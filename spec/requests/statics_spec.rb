@@ -3,30 +3,21 @@ require 'spec_helper'
 describe "Static" do
 
 	let(:base_title) { "Where to Watch" }
+	subject { page }
 
   describe "Home page" do
 
-    it "should have the h1 'Where to Watch'" do
-      visit root_path
-      expect(page).to have_content("#{base_title}")
-    end
+  	before { visit root_path }
 
-    it "should have the right title" do
-    	visit root_path
-    	expect(page).to have_title("#{base_title} | Home")
-    end
+    it { should have_content("#{base_title}") }
+    it { should have_title(full_title('Home')) }
   end
 
   describe "About page" do
 
-  	it "should have the content 'About Where to Watch'" do
-  		visit about_path
-  		expect(page).to have_content("About #{base_title}")
-  	end
+  	before { visit about_path }
 
-  	it "should have the right title" do
-  		visit about_path
-  		expect(page).to have_title("#{base_title} | About")
-  	end
+  	it { should have_content("About #{base_title}") }
+  	it { should have_title(full_title('About')) }
   end
 end
