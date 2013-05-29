@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
 /* universal */
 
 html {
@@ -6,6 +8,7 @@ html {
 
 body {
 	padding: 0 20px 20px 20px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -18,6 +21,18 @@ header {
 		margin-bottom: 10px;
 	}
 }
+
+/*a {
+	-webkit-transition: 0.3s ease;
+	-moz-transition:    0.3s ease;
+	-o-transition:      0.3s ease;
+	&:hover {
+		color: #EE3F37;
+		-webkit-transition: 0.3s ease;
+		-moz-transition:    0.3s ease;
+		-o-transition:      0.3s ease;
+	}
+}*/
 
 /* typography */
 
@@ -34,9 +49,37 @@ p {
 }
 
 /* header */
+.menu-heading {
+	text-transform: uppercase;
+	text-decoration: bold;
+	letter-spacing: -0.5px;
+}
 
-#logo {
+.menu {
+	display: inline;
+	list-style-type: none;
+	/*padding-right: 20px;*/
+
+	a {
+		text-decoration: none;
+		color: #000000;
+		padding: 5px 20px;
+		border: 2px #FCFCFC solid;
+		-webkit-transition: 0.4s ease;
+		-moz-transition:    0.4s ease;
+		-o-transition:      0.4s ease;
+		&:hover {
+			border: 2px DarkGray solid;
+			-webkit-transition: 0.4s ease;
+			-moz-transition:    0.4s ease;
+			-o-transition:      0.4s ease;
+		}
+	}
+
+}
+
+/*#logo {
 	font-weight: bold;
 	padding-top: 5px;
 	color: #000000;
-}
+}*/
