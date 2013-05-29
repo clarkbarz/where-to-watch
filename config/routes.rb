@@ -1,6 +1,7 @@
 WhereToWatch::Application.routes.draw do
-  get "static/home"
-  get "static/about"
+  root to: 'static#home'
+  match '/about', to: 'static#about', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
