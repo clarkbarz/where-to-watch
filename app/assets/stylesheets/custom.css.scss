@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
-
 /* universal */
 
 html {
@@ -7,7 +5,7 @@ html {
 }
 
 body {
-	padding: 0 20px 20px 20px;
+	padding: 0 20px 40px 20px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -22,17 +20,46 @@ header {
 	}
 }
 
-/*a {
+.content {
+	width: 60%;
+	margin-left: 20%;
+
+}
+
+.sign-up-btn {
+	margin-top: 50px;
+	a {
+		padding: 10px 30px;
+		border: 3px solid #FCFCFC;
+		text-decoration: none;
+		color: #1354D1;
+		-webkit-transition: 0.4s ease;
+		-moz-transition:    0.4s ease;
+		-o-transition:      0.4s ease;
+		&:hover {
+			border: 3px solid #1354D1;
+			color: #0E3D99;
+			-webkit-transition: 0.4s ease;
+			-moz-transition:    0.4s ease;
+			-o-transition:      0.4s ease;
+		}
+	}
+}
+a {
+	text-decoration: none;
+	color: #1354D1;
+	border-bottom: 2px #FCFCFC solid;
 	-webkit-transition: 0.3s ease;
 	-moz-transition:    0.3s ease;
 	-o-transition:      0.3s ease;
 	&:hover {
-		color: #EE3F37;
+		color: #0E3D99;
+		border-bottom: 2px #0E3D99 solid;
 		-webkit-transition: 0.3s ease;
 		-moz-transition:    0.3s ease;
 		-o-transition:      0.3s ease;
 	}
-}*/
+}
 
 /* typography */
 
@@ -51,7 +78,7 @@ p {
 /* header */
 .menu-heading {
 	text-transform: uppercase;
-	text-decoration: bolder;
+	font-weight: bolder;
 	letter-spacing: -0.5px;
 }
 
@@ -76,6 +103,12 @@ p {
 		}
 	}
 
+}
+
+#navigation {
+	float: left;
+	width: 100%;
+	padding-bottom: 40px;
 }
 
 /*#logo {
