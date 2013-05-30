@@ -20,7 +20,7 @@ describe User do
   end
 
   describe "when user email is an invalid format" do
-  	invalid_emails = %w["foo@exxon", "user_foo.org", "foo@user,com", "guy@friend_com.org" "guy.friend.com", "example@foo.", "guy@..exx", "friend@foo+baz.com"]
+  	invalid_emails = %w["foo@exxon", "user_foo.org", "foo@user,com", "guy@friend_com.org" "guy.friend.com", "example@foo.", "guy@..exx", "friend@foo+baz.com" "neder@jimmy..fresh"]
   	invalid_emails.each do |invalid|
   		before { @user.email = invalid }
   		it { should_not be_valid }
