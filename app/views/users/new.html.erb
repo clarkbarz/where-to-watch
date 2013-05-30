@@ -1,4 +1,24 @@
 <% provide(:title, 'Sign up') %>
 
-<h1>Sign up</h1>
-<p>Here you can sign up for an account at Where to Watch. We just need your email address and a good password.</p>
+<div class="row-fluid">
+	<div class="span5">
+		<h1>Sign up</h1>
+		<p>Here you can sign up for an account at Where to Watch. We just need your email address and a good password.</p>
+		<%= render 'shared/error_messages' %>
+	</div>
+	<div class="span3 offset2">
+		<h1 id="form-header"></h1>
+		<%= form_for(@user) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation %>
+
+			<%= f.submit "Create Account!", id: "submit-button" %>
+		<% end %>
+	</div>
+</div>
+

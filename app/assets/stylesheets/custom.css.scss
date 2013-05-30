@@ -44,21 +44,16 @@ header {
 	}
 }
 
-.content {
-/*	width: 60%;
-	margin-left: 20%;*/
-	a {
-		text-decoration: none;
-		color: #1354D1;
-		border-bottom: 2px #FCFCFC solid;
+.content a {
+	text-decoration: none;
+	color: #1354D1;
+	border-bottom: 2px #FCFCFC solid;
+	@include slow_transition;
+	&:hover {
+		color: #0E3D99;
+		border-bottom: 2px #0E3D99 solid;
 		@include slow_transition;
-		&:hover {
-			color: #0E3D99;
-			border-bottom: 2px #0E3D99 solid;
-			@include slow_transition;
-		}
 	}
-
 }
 
 .sign-up-btn {
@@ -135,11 +130,54 @@ p {
 .navbar {
 	padding: 11px 10px 0 10px;
 	border-bottom: 2px LightGray solid;
+	background-color: white;
 }
 
 .pull-right {
 	padding-right: 20px;
 }
+
+/* sign-up page */
+
+#submit-button {
+	background-color: white;
+	border: 2px solid DarkGray;
+	padding: 10px 15px;
+	margin-top: 20px;
+	@include slow_transition;
+	&:hover {
+		border: 2px solid orange;
+		@include slow_transition;
+	}
+}
+
+/* forms */
+
+#error-explanation {
+	color: #f00;
+	ul {
+		list-style: none;
+		margin: 0 0 18px 0;
+	}
+}
+
+.field_with_errors {
+	@extend .control-group;
+	@extend .error;
+}
+
+/* sidebar */
+
+/*aside {
+	section {
+	}
+	span {
+
+	}
+	h1 {
+
+	}
+}*/
 
 /* miscellaneous */
 
