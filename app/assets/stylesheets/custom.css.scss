@@ -44,6 +44,18 @@ header {
 	}
 }
 
+a {
+	text-decoration: none;
+	color: #1354D1;
+	border-bottom: 2px #FCFCFC solid;
+	@include slow_transition;
+	&:hover {
+		color: #0E3D99;
+		border-bottom: 2px #0E3D99 solid;
+		@include slow_transition;
+	}
+}
+
 .content a {
 	text-decoration: none;
 	color: #1354D1;
@@ -71,17 +83,7 @@ header {
 		}
 	}
 }
-a {
-	text-decoration: none;
-	color: #1354D1;
-	border-bottom: 2px #FCFCFC solid;
-	@include slow_transition;
-	&:hover {
-		color: #0E3D99;
-		border-bottom: 2px #0E3D99 solid;
-		@include slow_transition;
-	}
-}
+
 
 /* typography */
 
