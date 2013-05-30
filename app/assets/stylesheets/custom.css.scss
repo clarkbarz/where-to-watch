@@ -1,5 +1,19 @@
 @import "bootstrap";
 
+/* mixins, variables, stc. */
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin slow_transition {
+	-webkit-transition: 0.4s ease;
+	-moz-transition:    0.4s ease;
+	-o-transition:      0.4s ease;
+}
+
 /* universal */
 
 html {
@@ -37,15 +51,11 @@ header {
 		text-decoration: none;
 		color: #1354D1;
 		border-bottom: 2px #FCFCFC solid;
-		-webkit-transition: 0.3s ease;
-		-moz-transition:    0.3s ease;
-		-o-transition:      0.3s ease;
+		@include slow_transition;
 		&:hover {
 			color: #0E3D99;
 			border-bottom: 2px #0E3D99 solid;
-			-webkit-transition: 0.3s ease;
-			-moz-transition:    0.3s ease;
-			-o-transition:      0.3s ease;
+			@include slow_transition;
 		}
 	}
 
@@ -58,15 +68,11 @@ header {
 		border: 3px solid #7792C7;
 		text-decoration: none;
 		color: #2A5FC5;
-		-webkit-transition: 0.4s ease;
-		-moz-transition:    0.4s ease;
-		-o-transition:      0.4s ease;
+		@include slow_transition;
 		&:hover {
 			border: 3px solid #1354D1;
 			color: #0E3D99;
-			-webkit-transition: 0.4s ease;
-			-moz-transition:    0.4s ease;
-			-o-transition:      0.4s ease;
+			@include slow_transition;
 		}
 	}
 }
@@ -74,15 +80,11 @@ a {
 	text-decoration: none;
 	color: #1354D1;
 	border-bottom: 2px #FCFCFC solid;
-	-webkit-transition: 0.4s ease;
-	-moz-transition:    0.4s ease;
-	-o-transition:      0.4s ease;
+	@include slow_transition;
 	&:hover {
 		color: #0E3D99;
 		border-bottom: 2px #0E3D99 solid;
-		-webkit-transition: 0.4s ease;
-		-moz-transition:    0.4s ease;
-		-o-transition:      0.4s ease;
+		@include slow_transition;
 	}
 }
 
@@ -113,21 +115,15 @@ p {
 .menu {
 	display: inline;
 	list-style-type: none;
-	/*padding-right: 20px;*/
-
 	a {
 		text-decoration: none;
 		color: #000000;
 		padding: 5px 10px 5px 10px;
-		border: 2px White solid;
-		-webkit-transition: 0.4s ease;
-		-moz-transition:    0.4s ease;
-		-o-transition:      0.4s ease;
+		border: 2px white solid;
+		@include slow_transition;
 		&:hover {
 			border: 2px DarkGray solid;
-			-webkit-transition: 0.4s ease;
-			-moz-transition:    0.4s ease;
-			-o-transition:      0.4s ease;
+			@include slow_transition;
 		}
 	}
 
@@ -138,16 +134,19 @@ p {
 
 .navbar {
 	padding: 11px 10px 0 10px;
-	/*border-top: 2px DarkGray solid;*/
-	border: 2px DarkGray solid;
+	border-bottom: 2px LightGray solid;
 }
 
 .pull-right {
 	padding-right: 20px;
 }
 
-/*#logo {
-	font-weight: bold;
-	padding-top: 5px;
-	color: #000000;
-}*/
+/* miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}

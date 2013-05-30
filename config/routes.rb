@@ -1,5 +1,6 @@
 WhereToWatch::Application.routes.draw do
   get "users/new"
+  resources :users
   root to: 'static#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'static#about', via: 'get'
