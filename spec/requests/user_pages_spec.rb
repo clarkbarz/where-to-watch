@@ -32,19 +32,20 @@ describe "User pages" do
  				fill_in "Confirmation", with: "uglygoat"
  			end
 			it "should create a user" do
-   			expect { click_button submit }.to change(User, :count)
+   			expect { click_button submit }.to change(User, :count).by(1)
    		end
 
    		describe "after saving the user" do
    			before { click_button submit }
-   			let(:user) { User.find_by(email: 'example@user.com') }
-   			it { should have_title(user.name) }
+   			let(:user) { User.find_by(email: 'example@friend.com') }
+
+   			it { should have_content(user.email) }
    			it { should have_selector('div.alert.alert-success', text: 'Welcome to Where to Watch!') }
    		end
    	end
   end
 
-  describe "profile page" do
+  describe "profile" do
   	let(:user) { FactoryGirl.create(:user) }
   	before { visit user_path(user) }
 
