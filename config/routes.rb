@@ -1,9 +1,10 @@
 WhereToWatch::Application.routes.draw do
-  get "users/new"
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   root to: 'static#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'static#about', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
