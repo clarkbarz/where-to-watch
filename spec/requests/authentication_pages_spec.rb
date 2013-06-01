@@ -21,7 +21,7 @@ describe "AuthenticationPages" do
   		it { should have_selector('div.alert.alert-error', text: 'Invalid email/password combination') }
 
   		describe "after visiting another page" do
-  			before { click_link "Home" }
+  			before { click_link "Where to Watch" }
   			it { should_not have_selector('div.alert.alert-error') }
   		end
   	end
@@ -40,4 +40,6 @@ describe "AuthenticationPages" do
   		it { should_not have_link('Sign in', href: signin_path) }
   	end
   end
+
+
 end
