@@ -40,7 +40,7 @@ describe "User pages" do
    			let(:user) { User.find_by(email: 'example@friend.com') }
 
    			it { should have_content(user.email) }
-   			it { should have_selector('div.alert.alert-success', text: 'Welcome to Where to Watch!') }
+   			it { should have_selector('div.alert.alert-success') }
    		end
    	end
   end

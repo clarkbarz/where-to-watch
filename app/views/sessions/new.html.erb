@@ -1,0 +1,23 @@
+<% provide(:title, "Sign in") %>
+
+<div class="row-fluid">
+	<div class="span5">
+		<h1>Sign in</h1>
+		<p>
+			Sign in to your account here. All you have to do is enter your name and password! <br><br>
+			New user? <%= link_to "Sign up now!", signup_path %> </p>
+		</p>
+	</div>
+	<div class="span3 offset2">
+		<h1 id="form-header"></h1>
+		<%= form_for(:session, url: sessions_path) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Sign in", class: "submit-button" %>
+		<% end %>
+	</div>
+</div>
