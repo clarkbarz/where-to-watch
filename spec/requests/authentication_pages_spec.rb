@@ -36,7 +36,7 @@ describe "AuthenticationPages" do
   		end
 
       it { should have_content(user.email) }
-  		it { should have_link('Settings', href: '#') }
+  		it { should have_link('Settings', href: edit_user_path(user)) }
   		it { should have_link('Sign out', href: signout_path) }
   		it { should_not have_link('Sign in', href: signin_path) }
 

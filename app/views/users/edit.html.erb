@@ -1,0 +1,32 @@
+<% provide(:title, 'Edit user') %>
+
+<div class="row-fluid">
+	<div class="span5">
+		<h1>Update Information</h1>
+		<p>
+			This page is where you can update the very little amount of information that you have!
+		</p>
+	</div>
+	<div class="span3 offset2">
+		<h1 id="form-header"></h1>
+		<h3>Email</h3>
+		<div id="email-show">
+			<p><%= @user.email %></p>
+			<ul>
+				<li>
+					<%= link_to 'Edit',
+					'app/assets/javascripts/edit_user_form.js',
+					'showEmailForm();' %>
+				</li>
+			</ul>
+		</div>
+		<%= form_for(@user) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.submit "Save", class: "submit-button" %>
+
+		<% end %>
+	</div>
+</div>
