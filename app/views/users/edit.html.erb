@@ -9,24 +9,17 @@
 	</div>
 	<div class="span3 offset2">
 		<h1 id="form-header"></h1>
-		<h3>Email</h3>
-		<div id="email-show">
+		<h4>Email</h4>
+		<div id="email-display">
 			<p><%= @user.email %></p>
-			<ul>
-				<li>
-					<%= link_to 'Edit',
-					'app/assets/javascripts/edit_user_form.js',
-					'showEmailForm();' %>
-				</li>
-			</ul>
+			<%= button_tag "Edit", type: 'button', class: 'wtw-button edit-button', id: 'edit-email', onclick: "showHide('email-form', 'email-display');" %>
 		</div>
-		<%= form_for(@user) do |f| %>
-
-			<%= f.label :email %>
-			<%= f.text_field :email %>
-
-			<%= f.submit "Save", class: "submit-button" %>
-
-		<% end %>
+		<div id="email-form" style="display: none;">
+			<%= form_for(@user) do |f| %>
+				<%= f.text_field :email %>
+				<%= f.submit "Save", class: 'wtw-button submit-button', id:'save-email' %>
+				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-email', onclick: "showHide('email-display', 'email-form');" %>
+			<% end %>
+		</div>
 	</div>
 </div>
