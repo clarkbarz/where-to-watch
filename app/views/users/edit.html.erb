@@ -17,9 +17,9 @@
 		</div>
 		<div id="email-form">
 			<%= form_for(@user) do |f| %>
-				<%= f.label "New email:" %>
+				<%= f.label "New email" %>
 				<%= f.text_field :email %>
-				<%= f.label "Old password:" %>
+				<%= f.label "Password" %>
 				<%= f.password_field :password %>
 				<%= f.submit "Save", class: 'wtw-button submit-button', id:'save-email' %>
 				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-email', onclick: "showHide('email-display', 'email-form');" %>
@@ -34,11 +34,11 @@
 		</div>
 		<div id="password-form">
 			<%= form_for(@user) do |f| %>
-				<%= f.label "New password:" %>
+				<%= f.label "New password" %>
 				<%= f.password_field :new_password %>
 				<%= f.label "Confirm new password" %>
 				<%= f.password_field :new_password_confirmation %>
-				<%= f.label "Old password:" %>
+				<%= f.label "Old password" %>
 				<%= f.password_field :password %>
 				<%= f.submit "Save password", class: 'wtw-button submit-button', id: 'save-password' %>
 				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-password', onclick: "showHide('password-display', 'password-form');" %>

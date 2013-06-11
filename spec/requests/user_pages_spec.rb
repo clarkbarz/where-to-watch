@@ -66,8 +66,10 @@ describe "User pages" do
       describe "with valid information" do
         before do
           click_button "edit-email"
-          fill_in "New email:", with: "jerry@rice.com"
-          fill_in "Password:", with: user.password
+          within "#email-form" do
+            fill_in "user_email", with: "jerry@rice.com"
+            fill_in "user_password", with: user.password
+          end
           click_button "save-email"
         end
 
@@ -89,9 +91,11 @@ describe "User pages" do
       describe "with valid information" do
         before do
           click_button "edit-password"
-          fill_in "New password:", with: "friendly"
-          fill_in "Confirm new password", with: "friendly"
-          fill_in "Old password:", with: user.password
+          within "#password-form" do
+            fill_in "user_new_password", with: "friendly"
+            fill_in "user_new_password_confirmation", with: "friendly"
+            fill_in "user_password", with: user.password
+          end
           click_button "save-password"
         end
 
