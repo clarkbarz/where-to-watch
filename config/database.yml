@@ -3,7 +3,7 @@ development:
   encoding: utf8
   database: wheretowatch_development
   pool: 5
-  username: clarkbarz
+  username:
   password:
   host: localhost
 
@@ -12,6 +12,6 @@ test: &TEST
   encoding: utf8
   database: wheretowatch_test
   pool: 5
-  username: clarkbarz
+  username:
   password:
   host: localhost

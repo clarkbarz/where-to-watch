@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0.rc1'
 gem 'bootstrap-sass', '2.3.1.0'
 
-# Use postgresql for database management
+# Use PostgreSQL for database management
 gem 'pg'
 
 group :development, :test do
