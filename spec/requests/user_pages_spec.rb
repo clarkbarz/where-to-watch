@@ -54,12 +54,49 @@ describe "User pages" do
       it { should have_title("Edit user") }
     end
 
-    describe "with invalid information" do
-      before do
-        click_button "Edit"
-        click_button "Save"
+    describe "email" do
+      describe "with invalid information" do
+        before do
+          click_button "edit-email"
+          click_button "save-email"
+        end
+        it { should have_content('error') }
       end
-      it { should have_content('error') }
+
+      describe "with valid information" do
+        before do
+          click_button "edit-email"
+          fill_in "New email:", with: "jerry@rice.com"
+          fill_in "Password:", with: user.password
+          click_button "save-email"
+        end
+
+        it { should have_selector('div.alert.alert-success') }
+        it { should have_content('jerry@rice.com') }
+      end
+    end
+
+    describe "password" do
+      describe "with invalid information" do
+        before do
+          click_button "edit-password"
+          click_button "save-password"
+        end
+
+        it { should have_content('error') }
+      end
+
+      describe "with valid information" do
+        before do
+          click_button "edit-password"
+          fill_in "New password:", with: "friendly"
+          fill_in "Confirm new password", with: "friendly"
+          fill_in "Old password:", with: user.password
+          click_button "save-password"
+        end
+
+        it { should have_selector('div.alert.alert-success') }
+      end
     end
   end
 
