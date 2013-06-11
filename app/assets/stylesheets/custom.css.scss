@@ -105,15 +105,13 @@ p {
 	font-weight: bolder;
 	letter-spacing: -0.5px;
 	color: #000000;
-/*	padding: 5px 10px 5px 10px;*/
-/*	border: 2px white solid;
-	@include slow_transition;
-	&:hover {
-		border: 2px black solid;
-		@include slow_transition;
+/*	&:hover {
+		border-top: 2px green solid;
+		border-right: 2px orange solid;
+		border-bottom: 2px #2A5FC5 solid;
+		border-left: 2px black solid;
 	}*/
 }
-
 
 .navbar {
 	padding: 11px 10px 0 10px;
@@ -144,10 +142,11 @@ p {
 }
 
 .wtw-button {
+	font-family: 'Open Sans', sans-serif;
 	background-color: white;
 	border: 2px solid DarkGray;
 	padding: 5px 16px;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 10px 0;
 	@include slow_transition;
 	&:hover {
 		@include slow_transition;
@@ -190,10 +189,10 @@ p {
 
 /* edit user page */
 
-#email-display {
-	display: block;
-}
 #email-form {
+	display: none;
+}
+#password-form {
 	display: none;
 }
 

@@ -8,17 +8,40 @@
 		</p>
 	</div>
 	<div class="span3 offset2">
+		<!-- Edit Email -->
 		<h1 id="form-header"></h1>
 		<h4>Email</h4>
 		<div id="email-display">
 			<p><%= @user.email %></p>
-			<%= button_tag "Edit", type: 'button', class: 'wtw-button edit-button', id: 'edit-email', onclick: "showHide('email-form', 'email-display');" %>
+			<%= button_tag "Edit Email", type: 'button', class: 'wtw-button edit-button', id: 'edit-email', onclick: "showHide('email-form', 'email-display');" %>
 		</div>
-		<div id="email-form" style="display: none;">
+		<div id="email-form">
 			<%= form_for(@user) do |f| %>
+				<%= f.label "New email:" %>
 				<%= f.text_field :email %>
+				<%= f.label "Old password:" %>
+				<%= f.password_field :password %>
 				<%= f.submit "Save", class: 'wtw-button submit-button', id:'save-email' %>
 				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-email', onclick: "showHide('email-display', 'email-form');" %>
+			<% end %>
+		</div>
+		<!-- Edit Password -->
+		<h1 id="form-header"></h1>
+		<h4>Password</h4>
+		<div id="password-display">
+			<p>"Your password"</p>
+			<%= button_tag "Edit Password", type: 'button', class: 'wtw-button edit-button', id: 'edit-password', onclick: "showHide('password-form', 'password-display');" %>
+		</div>
+		<div id="password-form">
+			<%= form_for(@user) do |f| %>
+				<%= f.label "New password:" %>
+				<%= f.password_field :new_password %>
+				<%= f.label "Confirm new password" %>
+				<%= f.password_field :new_password_confirmation %>
+				<%= f.label "Old password:" %>
+				<%= f.password_field :password %>
+				<%= f.submit "Save password", class: 'wtw-button submit-button', id: 'save-password' %>
+				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-password', onclick: "showHide('password-display', 'password-form');" %>
 			<% end %>
 		</div>
 	</div>
