@@ -55,7 +55,10 @@ describe "User pages" do
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before do
+        click_button "Edit"
+        click_button "Save"
+      end
       it { should have_content('error') }
     end
   end
