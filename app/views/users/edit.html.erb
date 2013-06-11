@@ -6,6 +6,7 @@
 		<p>
 			This page is where you can update the very little amount of information that you have!
 		</p>
+		<%= render 'shared/error_messages' %>
 	</div>
 	<div class="span3 offset2">
 		<!-- Edit Email -->
@@ -35,11 +36,11 @@
 		<div id="password-form">
 			<%= form_for(@user) do |f| %>
 				<%= f.label "New password" %>
-				<%= f.password_field :new_password %>
-				<%= f.label "Confirm new password" %>
-				<%= f.password_field :new_password_confirmation %>
-				<%= f.label "Old password" %>
 				<%= f.password_field :password %>
+				<%= f.label "Confirm new password" %>
+				<%= f.password_field :password_confirmation %>
+				<%= f.label "Old password" %>
+				<%= f.password_field :old_password %>
 				<%= f.submit "Save password", class: 'wtw-button submit-button', id: 'save-password' %>
 				<%= button_tag "Cancel", type: 'button', class: 'wtw-button cancel-button', id: 'cancel-password', onclick: "showHide('password-display', 'password-form');" %>
 			<% end %>
