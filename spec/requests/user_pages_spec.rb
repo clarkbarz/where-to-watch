@@ -68,15 +68,17 @@ describe "User pages" do
 
       describe "with valid information" do
         let(:new_email) { "new@newey.org" }
+
         before do
           click_button "edit-email"
           within "#email-form" do
             fill_in "user_email", with: new_email
+            fill_in "user_old_password", with: user.password
           end
           click_button "save-email"
         end
 
-        it { should have_title(new_email) }
+        it { should have_content(new_email) }
         it { should have_selector('div.alert.alert-success') }
         it { should have_link('Sign out') }
         specify{ expect(user.reload.email).to eq new_email }
@@ -100,6 +102,7 @@ describe "User pages" do
           within "#password-form" do
             fill_in "user_password", with: new_password
             fill_in "user_password_confirmation", with: new_password
+            fill_in "user_old_password", with: user.password
           end
           click_button "save-password"
         end

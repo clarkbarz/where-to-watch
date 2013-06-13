@@ -26,10 +26,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      sign_in @user
-      redirect_to @user
+    if @user.authenticate(params[:user][:old_password])
+      if @user.email != params[:user][:email]
+        @user.update_attribute :email, params[:user][:email]
+        sign_in_redirect_to @user
+      elsif @user.update_attributes(user_params)
+        sign_in_redirect_to @user
+      else
+        render 'edit'
+      end
     else
       render 'edit'
     end
@@ -45,5 +50,11 @@ class UsersController < ApplicationController
 
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in. " unless signed_in?
+    end
+
+    def sign_in_redirect_to(user)
+      flash[:success] = "Profile updated"
+      sign_in user
+      redirect_to user
     end
 end
