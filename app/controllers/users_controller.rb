@@ -36,6 +36,7 @@ class UsersController < ApplicationController
         render 'edit'
       end
     else
+      flash.now[:error] = "Password is incorrect"
       render 'edit'
     end
   end

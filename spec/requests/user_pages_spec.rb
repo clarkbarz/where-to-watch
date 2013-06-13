@@ -63,7 +63,7 @@ describe "User pages" do
           click_button "edit-email"
           click_button "save-email"
         end
-        it { should have_content('error') }
+        it { should have_selector('div.alert.alert-error') }
       end
 
       describe "with valid information" do
@@ -92,7 +92,7 @@ describe "User pages" do
           click_button "save-password"
         end
 
-        it { should have_content('error') }
+        it { should have_selector('div.alert.alert-error') }
       end
 
       describe "with valid information" do
