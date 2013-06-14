@@ -210,6 +210,29 @@ p {
 	}
 }
 
+.pagination {
+	padding: 20px 0;
+	a {
+		color: black;
+		padding: 5px;
+		border: 2px solid LightGray;
+		@include slow_transition;
+		&:hover {
+			color: black;
+			border: 2px solid DarkGray;
+			@include slow_transition;
+		}
+	}
+	.current {
+		padding: 5px;
+		border: 2px solid DarkGray;
+	}
+	.disabled {
+		padding: 5px;
+		border: 2px solid LightGray;
+	}
+}
+
 /* miscellaneous */
 
 .debug_dump {
